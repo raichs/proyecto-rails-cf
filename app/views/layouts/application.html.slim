@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title
+      | Tienda virtual código facilito
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = stylesheet_link_tag 'application', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css'
+    = javascript_importmap_tags
+  body
+    - unless devise_controller?
+      header.navbar.navbar-dark.bg-primary.px-2
+        .container-fluid
+          = link_to 'Bienvenido a nuestra tienda virtual', root_path, class: "navbar-brand"
+          - if user_signed_in?
+            ul
+              li.nav-item style="margin-right: 15px"
+                = link_to 'Categorías', categories_path, class: "nav-link"
+              li.nav-item style="margin-right: 15px"
+                = link_to 'Productos', articles_path, class: "nav-link"
+            = link_to "#{current_user.email} Cerrar Sesión", destroy_user_session_path, class:"nav-link text-white"
+          - else
+            = link_to 'Login', new_user_session_path, class: "nav-link text-white"
+    main
+      = yield
