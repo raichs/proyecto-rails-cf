@@ -5,9 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users, path: 'admin'
   
-  #==========Admin routes===================
   draw(:admin)
-
 
   resources :categories
 
