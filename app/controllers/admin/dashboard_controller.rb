@@ -1,7 +1,5 @@
-class Admin::DashboardController < ActionController::Base
+class Admin::DashboardController < Admin::BaseController
 
-  # force user authentication
-  before_action :authenticate_user!
 
 
 

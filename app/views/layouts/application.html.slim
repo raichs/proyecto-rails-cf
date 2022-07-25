@@ -18,9 +18,9 @@ html
           - if user_signed_in?
             ul
               li.nav-item style="margin-right: 15px"
-                = link_to 'Categorías', categories_path, class: "nav-link"
+                = link_to 'Categorías', admin_categories_path, class: "nav-link"
               li.nav-item style="margin-right: 15px"
-                = link_to 'Productos', articles_path, class: "nav-link"
+                = link_to 'Productos', admin_articles_path, class: "nav-link"
             = link_to "#{current_user.email} Cerrar Sesión", destroy_user_session_path, class:"nav-link text-white"
           - else
             = link_to 'Login', new_user_session_path, class: "nav-link text-white"
