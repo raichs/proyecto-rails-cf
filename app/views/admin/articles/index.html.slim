@@ -1,0 +1,21 @@
+p style="color: green" = notice
+h1.h3.mb-2.text-gray-800 Productos
+p.mb-4
+  | Listado de productos
+.card.shadow.mb-4
+  .card-header.py-3
+    h6.m-0.font-weight-bold.text-primary Productos
+  .card-body
+    .table-responsive
+      table#dataTable.table.table-bordered cellspacing="0" width="100%" 
+        thead
+          tr
+            th Nombre
+            th Categoría
+            th Imágen
+            th colspan="3" Acciones
+        tbody 
+          - @articles.each do |article|
+            = render "row", article: article
+    
+    = link_to 'Nuevo Producto', new_admin_article_path, class: "btn btn-success form-control col-2"

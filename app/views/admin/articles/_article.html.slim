@@ -1,0 +1,6 @@
+.card 
+  img.card-img-top
+    = image_tag article.image_url,style: 'height:100%;width:100px;' if article.image
+  .card-body
+    h5.card-title = @article.title
+    p.card-text = @article.body

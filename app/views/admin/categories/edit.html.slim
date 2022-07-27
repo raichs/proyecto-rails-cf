@@ -1,0 +1,13 @@
+
+h1.h3.mb-2.text-gray-800 Categorías
+p.mb-4
+  | Editando categoría
+.card.shadow.mb-4
+  .card-header.py-3
+    h6.m-0.font-weight-bold.text-primary Datos de la categoría
+  .card-body
+    .my-4
+      = render "form", category: @category
+
+    = link_to "Regresa al listado de categorías", admin_categories_path, class: "btn btn-primary"
+    

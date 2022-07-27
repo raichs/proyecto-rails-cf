@@ -1,0 +1,21 @@
+
+p style="color: green"
+  = notice
+h1.h3.mb-2.text-gray-800 Productos
+p.mb-4
+  | Producto
+.card.shadow.mb-4
+  .card-header.py-3
+    h6.m-0.font-weight-bold.text-primary Datos del producto
+  .card-body
+    .row
+      .col-12.col-sm-5.col-lg-4
+        .my-4
+          = render  @article
+      .col-12.col-sm-3.col-lg-2
+        .my-4
+          = link_to 'Editar', edit_admin_article_path(@article), class: "btn btn-success form-control"
+        .my-4
+          = link_to 'Eliminar', admin_article_path(@article), method: :delete, data: { confirm: 'Está seguro?' }, class: "btn btn-danger form-control"
+        .my-4 
+          = link_to "Listado de productos", admin_articles_path, class: "btn btn-primary form-control"

@@ -1,0 +1,13 @@
+
+h1.h3.mb-2.text-gray-800 Productos
+p.mb-4
+  | Agrega un nuevo producto a tu tienda virtual
+.card.shadow.mb-4
+  .card-header.py-3
+    h6.m-0.font-weight-bold.text-primary Datos del producto
+  .card-body
+    .my-4
+      = render "form", article: @article
+
+    = link_to "Regresa al listado de productos", admin_articles_path, class: "btn btn-primary"
+        

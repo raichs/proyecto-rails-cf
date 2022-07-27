@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title
+      | Tienda virtual código facilito
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width,initial-scale=1"
+    = csrf_meta_tags
+    = csp_meta_tag
+    
+    = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_importmap_tags
+
+  body#page-top
+    div#wrapper
+      = render "layouts/menu"
+      #content-wrapper.d-flex.flex-column
+        #content
+          .container-fluid.p-4
+            main
+              = yield
+        footer.sticky-footer.bg-white
+          .container.my-auto
+            .copyright.text-center.my-auto
+              span Copyright &copy; Your Website 2020
+
+
+
+    
