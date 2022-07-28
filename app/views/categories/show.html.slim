@@ -1,0 +1,5 @@
+h1 Categoría: #{@category.name}
+- if @articles.count > 0
+  = render "shared/products/rows", articles: @articles
+- else
+  p No hay productos para esta categoría

@@ -1,0 +1,23 @@
+.container.mt-4.article-detail
+  h1 Detalle del producto
+  .card
+    .container-fliud
+      .wrapper.row
+        .preview.col-md-6
+          .preview-pic.tab-content
+            = image_tag @article.image_url, class: "card-img-top",style: 'width:75%;margin: 0 auto;' if @article.image
+        .details.col-md-6
+          h3.product-title = @article.title
+          .rating
+            .stars
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star.checked
+              span.fa.fa-star
+              span.fa.fa-star
+          p.product-description = @article.body
+          h4.price Precio: S/. #{@article.price}
+          .action
+            button.add-to-cart.btn.btn-success Agregar a carrito
+            button.like.btn.btn-info.ml-2
+              span.fa.fa-heart

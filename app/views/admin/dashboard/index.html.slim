@@ -1,0 +1,19 @@
+.grid.row-dashboard
+  .card.text-white.bg-success.mb-3
+    .card-body.text-center
+      i.fa.fa-users.fa-2x.mb-3
+      h5.card-title Usuarios:
+      span = User.count
+      p.card-text Cantidad de Usuarios registrados en la tienda virtual.
+  .card.text-white.bg-danger.mb-3
+    .card-body.text-center
+      i.fa.fa-users.fa-2x.mb-3
+      h5.card-title Categorías
+      span = Category.count
+      p.card-text Cantidad de Categorías registrados en la tienda virtual.
+  .card.text-white.bg-warning.mb-3
+    .card-body.text-center
+      i.fa.fa-users.fa-2x.mb-3
+      h5.card-title Productos
+      span = Article.count
+      p.card-text Cantidad de Productos registrados en la tienda virtual.

@@ -1,0 +1,6 @@
+.card.text-center style=""
+  = image_tag article.image_url, class: "card-img-top",style: 'width:75%;margin: 0 auto;' if article.image
+  .card-body
+    h5.card-title = article.title if article.title
+    p.card-text = article.body.truncate(100) if article.body
+    = link_to 'Ver Detalle', article_path(article), class: "btn btn-primary"

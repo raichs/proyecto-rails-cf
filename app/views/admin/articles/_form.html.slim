@@ -24,6 +24,10 @@
     = f.label :image, "Imágen del producto", class: "col-sm-2 col-form-label"
     .col-sm-5
       = f.file_field :image, class: 'form-control'
+  .mb-3.row
+    = f.label :price, "Precio", class: "col-sm-2 col-form-label"
+    .col-sm-5
+      = f.number_field :price, class: 'form-control'
   .row
     .col-sm-5
       = f.submit "Guardar producto", class: 'btn btn-success'

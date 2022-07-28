@@ -1,6 +1,7 @@
 tr#dom_id(article)
   td = article.title
   td = article.category.name
+  td = article.price
   td = image_tag article.image_url,style: 'height:100%;width:100px;' if article.image
   td = link_to 'Ver', admin_article_path(article)
   td = link_to 'Editar', edit_admin_article_path(article)
