@@ -22,7 +22,6 @@ class Admin::ArticlesController < Admin::BaseController
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
         NewArticleMailer.send_mail_new_product(@article, current_user.email, "agregado").deliver_later
