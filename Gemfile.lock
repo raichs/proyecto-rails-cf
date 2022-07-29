@@ -158,7 +158,6 @@ GEM
     nokogiri (1.13.6-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
-    pg (1.4.2)
     popper_js (2.11.5)
     public_suffix (4.0.7)
     puma (5.6.4)
@@ -284,7 +283,6 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   letter_opener
-  pg
   puma (~> 5.0)
   rails (~> 7.0.3)
   rails-i18n

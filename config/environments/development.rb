@@ -71,12 +71,25 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   #custom:
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  Rails.application.routes.default_url_options = config.action_mailer.default_url_options
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.asset_host = "http://localhost:3000"
-  config.active_job.queue_adapter = :inline
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # Rails.application.routes.default_url_options = config.action_mailer.default_url_options
+  # config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.asset_host = "http://localhost:3000"
+  # config.active_job.queue_adapter = :inline
 
+  config.action_mailer.delivery_method = :smtp
+  host = 'example.com' #replace with your own url
+  config.action_mailer.default_url_options = { host: host }
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => "codigo.facilito.rails@gmail.com",
+    :password             => "jhrnxjyejhruzgsi",
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
 
 end

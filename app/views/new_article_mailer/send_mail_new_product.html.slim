@@ -1,11 +1,11 @@
 p Hola:
-p Se ha creado el nuevo producto
+p Se ha #{@opcion} el producto
+p Nombre: #{@article.title}
+p Descripción: #{@article.body}
+p Precio: S/. #{@article.price}
 
 p 
-  | Ingresa a 
-  = link_to 'Productos', admin_articles_url
-  | para ver el nuevo listado
-
+  | Ingresa a #{link_to 'Productos', admin_articles_url} para ver el nuevo listado
 
 Gracias.
 

@@ -95,16 +95,14 @@ Rails.application.configure do
   host = 'example.com' #replace with your own url
   config.action_mailer.default_url_options = { host: host }
 
-  # SMTP settings for sendgrid
+  # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
-    :user_name => 'apikey', # This is the string literal 'apikey', NOT the ID of your API key
-    :password => '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', # This is the secret sendgrid API key which was issued during API key creation
-    :domain => 'store.cf.com.pe',
-    :address => 'smtp.sendgrid.net',
-    :port => 587,
-    :authentication => :plain,
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => "codigo.facilito.rails@gmail.com",
+    :password             => "jhrnxjyejhruzgsi",
+    :authentication       => "plain",
     :enable_starttls_auto => true
   }
-
 
 end
