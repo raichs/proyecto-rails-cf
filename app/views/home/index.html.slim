@@ -1,15 +1,2 @@
-.container
-  nav.navbar.navbar-expand-lg.bg-light
-    .container-fluid
-      button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-        span.navbar-toggler-icon
-      #navbarSupportedContent.collapse.navbar-collapse
-        ul.navbar-nav.me-auto.mb-2.mb-lg-0
-          - @categories.each do |category|
-            li.nav-item style="margin-right: 15px"
-              a.nav-link aria-current="page" href="#"
-                = category.name
-        form.d-flex role="search"
-          input.form-control.me-2 type="search" placeholder="Buscar" aria-label="Search"
-          button.btn.btn-outline-success type="button" 
-            | Buscar
+h1.mt-3.mb-4 Todos los productos
+= render "shared/products/rows", articles: @articles

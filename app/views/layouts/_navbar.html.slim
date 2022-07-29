@@ -1,28 +1,27 @@
-nav.navbar.navbar-expand-lg.navbar-light.bg-light
-  .container-fluid
-    a.navbar-brand href="#"  Navbar
-    button.navbar-toggler aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse" type="button" 
-      span.navbar-toggler-icon
-    #navbarSupportedContent.collapse.navbar-collapse
-      ul.navbar-nav.me-auto.mb-2.mb-lg-0
-        li.nav-item
-          a.nav-link.active aria-current="page" href="#"  Home
-        li.nav-item
-          a.nav-link href="#"  Link
-        li.nav-item.dropdown
-          a#navbarDropdown.nav-link.dropdown-toggle aria-expanded="false" data-bs-toggle="dropdown" href="#" role="button" 
-            | Dropdown
-          ul.dropdown-menu aria-labelledby="navbarDropdown" 
-            li
-              a.dropdown-item href="#"  Action
-            li
-              a.dropdown-item href="#"  Another action
-            li
-              hr.dropdown-divider/
-            li
-              a.dropdown-item href="#"  Something else here
-        li.nav-item
-          a.nav-link.disabled aria-disabled="true" href="#" tabindex="-1"  Disabled
-      form.d-flex
-        input.form-control.me-2 aria-label="Search" placeholder="Search" type="search" /
-        button.btn.btn-outline-success type="submit"  Search
+- unless devise_controller?
+  header.navbar.navbar-dark.bg-primary.px-2
+    .container-fluid
+      = link_to 'Bienvenido a nuestra tienda virtual', root_path, class: "navbar-brand"
+      - if user_signed_in?
+        = link_to 'Ir al admin', admin_root_path, class: "btn btn-success"
+        = link_to "(#{current_user.email}) Cerrar Sesión", destroy_user_session_path, class:"nav-link text-white"
+      - else
+        = link_to 'Login', new_user_session_path, class: "nav-link text-white"
+.container
+  nav.navbar.navbar-expand-lg.bg-light
+    .container-fluid
+      button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+          li.nav-item style="margin-right: 15px"
+            a.nav-link aria-current="page" href=root_path
+              span.fa.fa-home
+          - @categories&.each do |category|
+            li.nav-item style="margin-right: 15px"
+              a.nav-link aria-current="page" href=categoy_path(category)
+                = category.name
+        form.d-flex role="search"
+          input.form-control.me-2 type="search" placeholder="Buscar" aria-label="Search"
+          button.btn.btn-outline-success type="button" 
+            | Buscar
