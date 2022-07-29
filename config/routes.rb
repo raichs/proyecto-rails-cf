@@ -4,15 +4,7 @@ Rails.application.routes.draw do
   get '/productos/:id', to: 'articles#show', as: 'article'
   get '/categorias/:id', to: 'categories#show', as: 'categoy'
 
-  # devise_for :users, path: 'admin'
-
-  # devise_for :users,
-  #            path: 'admin',
-  #            controllers: {
-  #              registrations: 'registrations',
-  #              confirmations: 'confirmations',
-  #              sessions: '/sessions'
-  #            }
+  get '/search', to: 'articles#search'
 
   devise_for :users,
               path: 'admin',

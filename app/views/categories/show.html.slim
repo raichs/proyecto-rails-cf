@@ -1,4 +1,4 @@
-h1 Categoría: #{@category.name}
+h1.mt-3.mb-4  Categoría: #{@category.name}
 - if @articles.count > 0
   = render "shared/products/rows", articles: @articles
 - else

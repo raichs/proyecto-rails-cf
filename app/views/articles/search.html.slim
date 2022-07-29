@@ -1,0 +1,9 @@
+h1.mt-3.mb-4  Búsqueda: #{params[:search]} 
+
+- if @articles.count > 0
+  .container_products_index.mt-3
+    - @articles.each do |article|
+      = render "shared/products/row", article: article
+- else
+  .mt-3
+    p No hay productos con el término de búsqueda ingresado
