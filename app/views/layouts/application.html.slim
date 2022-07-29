@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="es"
   head
     title
       | Tienda virtual código facilito
@@ -11,7 +11,6 @@ html
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_importmap_tags
   body
-    = render 'layouts/navbar'
     - unless devise_controller?
       header.navbar.navbar-dark.bg-primary.px-2
         .container-fluid

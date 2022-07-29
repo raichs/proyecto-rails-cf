@@ -25,6 +25,7 @@ class Admin::ArticlesController < Admin::BaseController
 
     respond_to do |format|
       if @article.save
+        NewArticleMailer.send_mail_new_product(@article).deliver_later
         format.html { redirect_to admin_article_url(@article), notice: "Producto creado satisfactoriamente." }
         format.json { render :show, status: :created, location: @article }
       else
@@ -38,6 +39,7 @@ class Admin::ArticlesController < Admin::BaseController
   def update
     respond_to do |format|
       if @article.update(article_params)
+        NewArticleMailer.send_mail_new_product(@article).deliver_later
         format.html { redirect_to admin_article_url(@article), notice: "Producto actualizado satisfactoriamente." }
         format.json { render :show, status: :ok, location: @article }
       else

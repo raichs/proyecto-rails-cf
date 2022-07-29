@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="es"
   head
     title
       | Tienda virtual código facilito
@@ -10,20 +10,24 @@ html
     
     = stylesheet_link_tag 'application', 'data-turbo-track': 'reload'
     = javascript_importmap_tags
-
-  body#page-top
-    div#wrapper
-      = render "layouts/menu"
-      #content-wrapper.d-flex.flex-column
-        #content
-          .container-fluid.p-4
-            main
+  
+  - if controller_name == 'sessions' || controller_name == 'registrations'
+    body.bg-gradient-primary
+      .container
+        = render "admin/shared/flashes"
+        = yield
+  - else 
+    body#page-top
+      div#wrapper
+        = render "layouts/menu"
+        #content-wrapper.d-flex.flex-column
+          #content
+            .container-fluid.p-4
+              = render "admin/shared/flashes"
               = yield
-        footer.sticky-footer.bg-white
-          .container.my-auto
-            .copyright.text-center.my-auto
-              span Copyright &copy; Your Website 2020
-
-
+          footer.sticky-footer.bg-white
+            .container.my-auto
+              .copyright.text-center.my-auto
+                span Copyright &copy; Your Website 2020
 
     

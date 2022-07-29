@@ -78,6 +78,7 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.5, < 3)
       sassc-rails (>= 2.0.0)
+    browser (5.3.1)
     builder (3.2.4)
     capybara (3.37.1)
       addressable
@@ -123,6 +124,10 @@ GEM
     jbuilder (2.11.5)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -180,6 +185,9 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.4.3)
       loofah (~> 2.3)
+    rails-i18n (7.0.5)
+      i18n (>= 0.7, < 2)
+      railties (>= 6.0.0, < 8)
     railties (7.0.3)
       actionpack (= 7.0.3)
       activesupport (= 7.0.3)
@@ -267,14 +275,17 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   bootstrap (~> 5.2)
+  browser
   capybara
   debug
   devise
   image_processing (~> 1.12, >= 1.12.1)
   importmap-rails
   jbuilder
+  letter_opener
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rails-i18n
   sassc-rails
   selenium-webdriver
   shrine (~> 3.3)

@@ -14,7 +14,7 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '9584bc29b260593e0eaa58f26349ad97cac74bbbb332264321e6751b0ab8cd46eb590107ab27f506d306a66b601e40fe819f0a84f27cdc3bbd227430add3e930'
+  config.secret_key = '9584bc29b260593e0eaa58f26349ad97cac74bbbb332264321e6751b0ab8cd46eb590107ab27f506d306a66b601e40fe819f0a84f27cdc3bbd227430add3e930'
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -164,7 +164,7 @@ Devise.setup do |config|
 
   # ==> Configuration for :rememberable
   # The time the user will be remembered without asking for credentials again.
-  # config.remember_for = 2.weeks
+  config.remember_for = 2.weeks
 
   # Invalidates all the remember me tokens when the user signs out.
   config.expire_all_remember_me_on_sign_out = true
@@ -188,7 +188,7 @@ Devise.setup do |config|
   # ==> Configuration for :timeoutable
   # The time you want to timeout the user session without activity. After this
   # time the user will be asked for credentials again. Default is 30 minutes.
-  # config.timeout_in = 30.minutes
+  config.timeout_in = 60.minutes
 
   # ==> Configuration for :lockable
   # Defines which strategy will be used to lock an account.
